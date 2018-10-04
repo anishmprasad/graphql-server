@@ -9,7 +9,7 @@ const {
 
 // Hardcoded customer data
 
-const customer  = [
+const customers  = [
   {id : "1" , name : "anish" , email:"anishmprasad@gmail.com",age :28},
   { id: "2", name: "nija", email: "nijabhagyanath@gmail.com", age: 28 },
   { id: "3", name: "nisha", email: "nishapriyajith@gmail.com", age: 35 },
@@ -40,9 +40,9 @@ const RootQuery = new GraphQLObjectType({
         id: { type :GraphQLString }
       },
       resolve(parentValue, args) {
-        for (let i = 0; i < customer.length; i += 1) {
-          if (customer[i].id == args.id) {
-            return customer[i]
+        for (let i = 0; i < customers.length; i += 1) {
+          if (customers[i].id == args.id) {
+            return customers[i]
           }
         }
       }
