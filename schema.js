@@ -23,7 +23,7 @@ const customer  = [
 
 const CustomerType = new GraphQLObjectType({
   name : "Customer",
-  fields=() => ({
+  fields : () => ({
     id : {type:GraphQLString},
     name :{type:GraphQLString},
     email :{type:GraphQLString}
