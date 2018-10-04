@@ -33,15 +33,17 @@ const CustomerType = new GraphQLObjectType({
 // Root Query
 const RootQuery = new GraphQLObjectType({
   name : 'RootQueryType',
-  customer:{
-    type:CustomerType,
-    args:{
-      id:{GraphQLString}
-    },
-    resolve(parentValue,args){
-      for(let i = 0;i<customer.length,i+=1){
-        if(customer[i].id == args.id){
-          return customer[i]
+  fields : {
+    customer: {
+      type: CustomerType,
+      args: {
+        id: { GraphQLString }
+      },
+      resolve(parentValue, args) {
+        for (let i = 0; i < customer.length; i += 1) {
+          if (customer[i].id == args.id) {
+            return customer[i]
+          }
         }
       }
     }
