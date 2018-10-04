@@ -37,7 +37,7 @@ const RootQuery = new GraphQLObjectType({
     customer: {
       type: CustomerType,
       args: {
-        id: { GraphQLString }
+        id: { type :GraphQLString }
       },
       resolve(parentValue, args) {
         for (let i = 0; i < customer.length; i += 1) {
